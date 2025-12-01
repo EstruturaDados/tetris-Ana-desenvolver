@@ -37,4 +37,18 @@ Peca gerarPeca(){
     return p;  // devolve a peça criada
 }
 
+// ENQUEUE – INSERIR PEÇA
+void enqueue() {
+    if (quantidade == TAM) {
+        printf("Fila cheia! Não é possível inserir.\n");
+        return;
+    }
+
+    fila[fim] = gerarPeca();
+    fim = (fim + 1) % TAM;
+    quantidade++;
+
+    printf("Peça inserida com sucesso!\n");
+}
+
    

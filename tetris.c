@@ -17,8 +17,13 @@ typedef struct {
     char nome;  // 'I', 'O', 'T', 'L'
     int id;     // identificador único
 } Peca;
-    
-    
+
+// VARIÁVEIS DA FILA CIRCULAR
+Peca fila[TAM];   // vetor que armazena as 5 peças da fila
+int inicio = 0;   // posição da próxima peça a ser removida (dequeue)
+int fim = 0;      // posição onde a próxima peça será inserida (enqueue)
+int quantidade = 0;  // quantidade atual de peças na fila
+int proximoID = 1;   // contador para gerar ID único para cada peça
 
 
 

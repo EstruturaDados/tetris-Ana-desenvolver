@@ -9,7 +9,6 @@
 
 #define TAM 5   // tamanho fixo da fila circular
 
-int main() {
 // STRUCT QUE REPRESENTA UMA PEÇA DO TETRIS
 // Cada peça tem um nome (tipo) e um ID único
 
@@ -25,6 +24,17 @@ int fim = 0;      // posição onde a próxima peça será inserida (enqueue)
 int quantidade = 0;  // quantidade atual de peças na fila
 int proximoID = 1;   // contador para gerar ID único para cada peça
 
+// FUNÇÃO PARA GERAR UMA PEÇA NOVA
+// Retorna uma peça com tipo aleatório e ID único
 
+Peca gerarPeca(){
+    char tipos[] = {'I', 'O', 'T', 'L'};  // tipos possíveis das peças
+
+    Peca p;
+    p.nome = tipos[rand() % 4];  // escolhe um tipo aleatório
+    p.id = proximoID++;          // ID único e sequencial
+
+    return p;  // devolve a peça criada
+}
 
    

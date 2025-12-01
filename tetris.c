@@ -51,4 +51,16 @@ void enqueue() {
     printf("Peça inserida com sucesso!\n");
 }
 
-   
+// DEQUEUE – REMOVER PEÇA
+   void dequeue() {
+    if (quantidade == 0) {
+        printf("Fila vazia! Nada a remover.\n");
+        return;
+    }
+
+    Peca removida = fila[inicio];
+    inicio = (inicio + 1) % TAM;
+    quantidade--;
+
+    printf("Peça jogada: [%c | ID %d]\n", removida.nome, removida.id);
+}

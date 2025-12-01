@@ -64,3 +64,20 @@ void enqueue() {
 
     printf("Peça jogada: [%c | ID %d]\n", removida.nome, removida.id);
 }
+
+// EXIBIR FILA ATUAL
+void mostrarFila() {
+    printf("\n--- FILA ATUAL ---\n");
+
+    if (quantidade == 0) {
+        printf("Fila vazia!\n");
+        return;
+    }
+
+    int i = inicio;
+    for (int c = 0; c < quantidade; c++) {
+        printf("[%c | ID %d] ", fila[i].nome, fila[i].id);
+        i = (i + 1) % TAM;
+    }
+    printf("\n-------------------\n");
+}

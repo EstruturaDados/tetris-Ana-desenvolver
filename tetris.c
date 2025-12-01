@@ -81,3 +81,54 @@ void mostrarFila() {
     }
     printf("\n-------------------\n");
 }
+
+// INICIALIZA COM 5 PEÇAS
+void inicializarFila() {
+    for (int i = 0; i < TAM; i++) {
+        fila[i] = gerarPeca();
+    }
+    quantidade = TAM;
+    inicio = 0;
+    fim = 0;
+}
+
+// PROGRAMA PRINCIPAL
+int main() {
+    srand(time(NULL));
+
+    inicializarFila();
+
+    int op;
+
+    do {
+        printf("\n===== MENU TETRIS STACK (NOVATO) =====\n");
+        printf("1 - Visualizar fila\n");
+        printf("2 - Jogar peça (dequeue)\n");
+        printf("3 - Inserir nova peça (enqueue)\n");
+        printf("0 - Sair\n");
+        printf("Escolha: ");
+        scanf("%d", &op);
+
+        switch (op) {
+            case 1:
+                mostrarFila();
+                break;
+            case 2:
+                dequeue();
+                mostrarFila();
+                break;
+            case 3:
+                enqueue();
+                mostrarFila();
+                break;
+            case 0:
+                printf("Encerrando...\n");
+                break;
+            default:
+                printf("Opção inválida!\n");
+        }
+
+         } while (op != 0);
+
+    return 0;
+}
